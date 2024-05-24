@@ -68,8 +68,7 @@ const images = [
 
 
   const galleryEl = document.querySelector(".gallery");
-
-  galleryEl.insertAdjacentHTML("beforeend", createMarcup(images));
+ galleryEl.insertAdjacentHTML("beforeend", createMarcup(images));
 
   galleryEl.addEventListener("click", handleClick);
 
@@ -84,32 +83,28 @@ src="${images.preview}"
 alt="${images.description}"
 />
 </a>
-</li>`).join("");  
+</li>`).join("");
 
   }
+import SimpleLightbox from "simplelightbox";
 
-  <li class="gallery-item">
-	<a class="gallery-link" href="large-image.jpg">
-		<img
-			class="gallery-image"
-			src="small-image.jpg"
-			alt="Image description"
-			/>
-	</a>
-</li>
+import "simplelightbox/dist/simple-lightbox.min.css";
 
 
-/*   function handleClick(event){
+let  lightbox = new SimpleLightbox('.gallery a', {
+  captions: true,
+  captionsData: 'alt',
+  captionPosition: 'bottom',
+  captionDelay: 250, });
 
-      event.preventDefault();
+/* function createMarcup(arr){
+  return arr.map(
+    images => `<div class="gallery">
+    <a href="${images.original}"><img src="${images.preview}" alt="${images.description}" title="${images.description}"/></a>
 
-      if(event.target.nodeName !== `IMG`){
-          return;
-      }
-       console.log(event.target.dataset.source);
+</div>`
+  ).join("")
 
-       const instance = basicLightbox.create(`
-       <img src="${event.target.dataset.source}" width="1112" height="640">
-       `)
-       instance.show();
-   } */
+}; */
+
+
