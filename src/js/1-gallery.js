@@ -1,3 +1,7 @@
+import SimpleLightbox from "simplelightbox";
+
+import "simplelightbox/dist/simple-lightbox.min.css";
+
 const images = [
     {
       preview:
@@ -70,7 +74,7 @@ const images = [
   const galleryEl = document.querySelector(".gallery");
  galleryEl.insertAdjacentHTML("beforeend", createMarcup(images));
 
-  galleryEl.addEventListener("click", handleClick);
+/*   galleryEl.addEventListener("click", handleClick); */
 
 
 function createMarcup(arr){
@@ -86,9 +90,7 @@ alt="${images.description}"
 </li>`).join("");
 
   }
-import SimpleLightbox from "simplelightbox";
 
-import "simplelightbox/dist/simple-lightbox.min.css";
 
 
 let  lightbox = new SimpleLightbox('.gallery a', {
@@ -97,14 +99,6 @@ let  lightbox = new SimpleLightbox('.gallery a', {
   captionPosition: 'bottom',
   captionDelay: 250, });
 
-/* function createMarcup(arr){
-  return arr.map(
-    images => `<div class="gallery">
-    <a href="${images.original}"><img src="${images.preview}" alt="${images.description}" title="${images.description}"/></a>
 
-</div>`
-  ).join("")
-
-}; */
 
 
